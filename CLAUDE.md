@@ -5,8 +5,9 @@ adds Claude-Code-specific guidance.
 
 ## Hard rules (repeat of the non-negotiables)
 
-- Author is **Carlos Manzanedo Rueda**. No AI attribution anywhere — enforced by
-  `.githooks/commit-msg`.
+- **No AI attribution** anywhere — no `Co-Authored-By` (AI), no "Generated with"
+  footers, no 🤖 — enforced by `.githooks/commit-msg` and `scripts/ci.sh`.
+  (Author/copyright metadata lives in `LICENSE` and the manifests.)
 - Keep `claude plugin validate ./plugins/extended-superpowers` and
   `scripts/ci.sh` green on every commit.
 - Local commits are fine during development; **do not push or create the GitHub

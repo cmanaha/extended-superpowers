@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# setup.sh — run once after cloning. Wires the authorship guard so the
+# setup.sh — run once after cloning. Wires the commit-msg guard so the
 # no-AI-attribution rule is enforced on THIS clone, not just the author's.
 #
 # core.hooksPath is local git config and is never committed, so a fresh clone
@@ -12,5 +12,5 @@ git config core.hooksPath .githooks
 chmod +x .githooks/* scripts/*.sh \
   plugins/extended-superpowers/hooks/*.sh tests/trigger/*.sh 2>/dev/null || true
 
-echo "✓ dev setup complete: commit-msg authorship guard active (core.hooksPath=.githooks)."
-echo "  Author is Carlos Manzanedo Rueda. AI attribution in commits is blocked."
+echo "✓ dev setup complete: commit-msg guard active (core.hooksPath=.githooks)."
+echo "  AI attribution / co-authorship in commit messages is blocked."

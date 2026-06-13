@@ -14,9 +14,11 @@ marketplace.
 dependency on superpowers. New phases are additive skills + agents + hooks;
 superpowers skills are reused, never edited. See the spec and ADR-0001/2/3.
 
-**Author:** Carlos Manzanedo Rueda. No AI attribution anywhere — enforced by the
-committed `.githooks/commit-msg` (wired by `scripts/setup.sh`) AND a git-history
-check in `scripts/ci.sh`, so the guard holds on a fresh clone and in CI.
+**Authorship:** commits are authored by a human (no AI attribution). The guard is
+generic and name-free: the committed `.githooks/commit-msg` (wired by
+`scripts/setup.sh`) AND a git-history check in `scripts/ci.sh` reject any
+AI co-authorship/attribution, on a fresh clone and in CI. Author/copyright
+metadata lives in `LICENSE` and the manifests.
 
 > **Revision note:** v2 of this plan, hardened against a three-lens adversarial
 > review (coverage+guardrails, testing+trackability, sequencing+anti-hubris).

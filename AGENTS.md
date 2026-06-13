@@ -4,9 +4,11 @@ For any AI-powered tool (Claude Code, Cursor, Kiro, etc.) working in this repo.
 
 ## Non-Negotiables (enforced, not advisory)
 
-- **Author is Carlos Manzanedo Rueda.** No `Co-Authored-By` lines, no "Generated
-  with" footers, no AI attribution of any kind — in commits, PRs, or files. This
-  is enforced by the `.githooks/commit-msg` hook; do not bypass it.
+- **No AI attribution.** Commits are authored by humans. No `Co-Authored-By` (AI),
+  no "Generated with" footers, no 🤖 lines, no AI-tool attribution of any kind —
+  in commits, PRs, or files. Enforced by `.githooks/commit-msg` and a git-history
+  check in `scripts/ci.sh`; do not bypass. (Authorship and copyright metadata
+  live in `LICENSE` and the plugin manifests, not in the guard.)
 - **Never commit secrets.** No tokens, keys, or credentials. Test data uses
   fakes only.
 - **The repo must stay installable.** Every commit leaves

@@ -43,13 +43,13 @@ else
   for t in "${trigger_tests[@]}"; do echo "run: $t"; bash "$t" || fail=1; done
 fi
 
-step "6. Authorship guard (no AI attribution in git history)"
+step "6. No-AI-attribution guard (git history)"
 if git rev-parse HEAD >/dev/null 2>&1; then
   if git log --format='%B' | grep -qiE \
-    '^[[:space:]]*co-authored-by:|generated with \[?claude|🤖[[:space:]]*generated|noreply@anthropic\.com'; then
+    'co-authored-by:.*(claude|anthropic|openai|gpt|copilot|gemini|cursor|\bai\b)|generated with \[?(claude|ai)|🤖|noreply@anthropic\.com|assisted by (claude|gpt|copilot|an ai)'; then
     echo "AI attribution found in commit history"; fail=1
   else
-    echo "ok: clean history (author Carlos Manzanedo Rueda)"
+    echo "ok: no AI attribution in commit history"
   fi
 else
   echo "no commits yet — skipping"

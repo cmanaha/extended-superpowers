@@ -1,19 +1,21 @@
 #!/usr/bin/env bash
-# commit-msg hook — enforces a hard, non-negotiable repo rule:
-# the author is Carlos Manzanedo Rueda, and NO AI attribution may appear in any
-# commit message. This is enforced by tooling, not advisory docs, on purpose.
+# commit-msg hook — a non-negotiable repo rule, enforced by tooling not docs:
+# NO AI-generated attribution or co-authorship in commit messages.
 #
-# It targets the specific attribution footers AI tools add — NOT the word
-# "Claude" itself, because this project legitimately discusses Claude Code.
+# Commits in this repository are authored by humans. AI coding tools must not be
+# credited as authors or co-authors. The patterns below target the attribution
+# footers AI tools add (Co-Authored-By an AI, "Generated with", the robot emoji,
+# anthropic noreply) — NOT the word "Claude" itself, which this project
+# legitimately discusses. Generic by design: no person's name appears here.
 set -euo pipefail
 
 msg_file="$1"
 
 if grep -qiE \
-  '^[[:space:]]*co-authored-by:|generated with \[?claude|🤖[[:space:]]*generated|noreply@anthropic\.com|assisted by (claude|gpt|copilot|an ai)' \
+  'co-authored-by:.*(claude|anthropic|openai|gpt|copilot|gemini|cursor|\bai\b)|generated with \[?(claude|ai)|🤖|noreply@anthropic\.com|assisted by (claude|gpt|copilot|an ai)' \
   "$msg_file"; then
-  echo "✗ commit blocked: AI attribution is not allowed in this repository." >&2
-  echo "  The author is Carlos Manzanedo Rueda. Remove any Co-Authored-By /" >&2
-  echo "  'Generated with' / AI-attribution lines and commit again." >&2
+  echo "✗ commit blocked: AI attribution / co-authorship is not allowed here." >&2
+  echo "  Remove any Co-Authored-By (AI), 'Generated with', 🤖, or AI-tool" >&2
+  echo "  attribution line, then commit again." >&2
   exit 1
 fi
