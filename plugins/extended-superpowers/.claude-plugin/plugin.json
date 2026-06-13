@@ -1,0 +1,26 @@
+{
+  "name": "extended-superpowers",
+  "version": "0.0.1",
+  "description": "A research-first, adversarially-reviewed, acceptance-gated development loop that extends superpowers with a planning session, an empirical environment-research (probe) phase, named-lens adversarial review at every gate, an executable acceptance-test tier, and a tooling-enforced definition of done.",
+  "author": {
+    "name": "Carlos Manzanedo Rueda",
+    "email": "c.manaha@gmail.com"
+  },
+  "homepage": "https://github.com/cmanaha/extended-superpowers",
+  "repository": "https://github.com/cmanaha/extended-superpowers",
+  "license": "MIT",
+  "keywords": [
+    "superpowers",
+    "workflow",
+    "environment-research",
+    "adversarial-review",
+    "acceptance-tests",
+    "definition-of-done"
+  ],
+  "dependencies": [
+    {
+      "name": "superpowers",
+      "marketplace": "claude-plugins-official"
+    }
+  ]
+}

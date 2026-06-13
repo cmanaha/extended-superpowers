@@ -1,0 +1,17 @@
+# Disposable environment-research experiment scratch. The experiment CODE is
+# throwaway and never committed; only the harvested findings (decisions.jsonl,
+# Lessons learned, the graduation decision) are kept under docs/experiments/.
+docs/experiments/**/scratch/
+docs/experiments/**/.venv/
+
+# OS / editor noise
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Eval / CI artifacts
+*.eval.json
+output.json
+node_modules/
+.cache/

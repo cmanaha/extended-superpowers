@@ -1,0 +1,22 @@
+{
+  "name": "manzanedo",
+  "owner": {
+    "name": "Carlos Manzanedo Rueda"
+  },
+  "metadata": {
+    "pluginRoot": "./plugins"
+  },
+  "allowCrossMarketplaceDependenciesOn": [
+    "claude-plugins-official"
+  ],
+  "plugins": [
+    {
+      "name": "extended-superpowers",
+      "source": "extended-superpowers",
+      "description": "Research-first, adversarially-reviewed, acceptance-gated development loop layered on superpowers.",
+      "author": {
+        "name": "Carlos Manzanedo Rueda"
+      }
+    }
+  ]
+}
