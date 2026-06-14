@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>extended-superpowers — changelog</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,900;1,9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Spectral:wght@400;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="./styles.css" />
+<style>
+  .rel { border-top: 1px solid var(--faint); padding: 30px 0; }
+  .rel:first-of-type { border-top: none; }
+  .tag { font-family: "IBM Plex Mono", monospace; font-size: 13px; color: var(--amber); letter-spacing: 0.06em; }
+  .rel h2 { font-size: clamp(22px, 3vw, 30px); margin: 6px 0 14px; }
+  .rel ul { margin: 0; padding-left: 0; list-style: none; max-width: 70ch; }
+  .rel li { position: relative; padding: 7px 0 7px 24px; color: #d3cec3; font-size: 16px; line-height: 1.55; border-bottom: 1px dashed rgba(236,232,223,0.07); }
+  .rel li::before { content: "+"; position: absolute; left: 0; color: var(--amber); font-family: "IBM Plex Mono", monospace; }
+  .rel li code { font-family: "IBM Plex Mono", monospace; font-size: 14px; color: var(--ink); background: rgba(236,232,223,0.06); padding: 1px 6px; border-radius: 4px; }
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="./index.html" style="text-decoration:none;">extended·<b>superpowers</b></a>
+    <nav>
+      <a href="./index.html#why">Why a flywheel</a>
+      <a href="./index.html#loop">The loop</a>
+      <a href="./index.html#install">Install</a>
+      <a href="./changelog.html">Changelog</a>
+      <a href="https://github.com/cmanaha/extended-superpowers">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero" style="border-top:none; padding-bottom:10px;">
+    <div class="kicker">The record</div>
+    <h1 style="font-size:clamp(34px,5vw,56px);">Changelog</h1>
+    <p class="lede">Every turn of the wheel, written down. Semantic versioning; the loop applied to itself.</p>
+  </section>
+
+  <div class="rel">
+    <span class="tag">UNRELEASED</span>
+    <h2>The clean copy</h2>
+    <ul>
+      <li>Environment-agnostic clean copy (ADR-0005): generic <code>memory</code> instead of any personal store, with an inline fallback when none is present.</li>
+      <li>Bundled <code>spec-compliance-reviewer</code> and <code>code-quality-reviewer</code> agents — the implementation lenses now ship in the box, so the loop is self-contained on any machine.</li>
+      <li>External specialists (e.g. <code>pr-review-toolkit</code>) referenced only as optional &ldquo;if installed&rdquo; enhancements.</li>
+      <li><code>planning-session</code> and <code>orchestrator</code> skills, plus the <code>research-scout</code> agent. All seven phase skills ship with trigger tests.</li>
+      <li>CI badge, and the spec success-criteria reconciled with the eval-harness decision.</li>
+    </ul>
+  </div>
+
+  <div class="rel">
+    <span class="tag">v0.0.2 — 2026-06-13</span>
+    <h2>Architecture-validated preview</h2>
+    <ul>
+      <li><code>environment-research</code> skill (the empirical probe phase) with its harvest-format reference and disposable-tree contract.</li>
+      <li>Experiment <strong>E01 (plugin sequencing): GO</strong> — a pre-brainstorm phase runs before brainstorming (5/5 with the ordering hook; 0/5 without). The prepend architecture is proven.</li>
+      <li>The SessionStart hook asserts the loop ordering imperatively — the E01 lesson, applied.</li>
+    </ul>
+  </div>
+
+  <div class="rel">
+    <span class="tag">v0.0.1</span>
+    <h2>Walking skeleton</h2>
+    <ul>
+      <li>Marketplace + plugin manifests; the <code>extended-superpowers-overview</code> skill; the SessionStart bootstrap; the CI spine and the commit-msg authorship guard.</li>
+      <li>The <code>adversarial-review</code> skill with its binding nine-lens contract, the <code>adversarial-reviewer</code> agent, the <code>acceptance-tests</code> skill with a real headless eval harness, and the tooling-enforced <code>definition-of-done</code> gate.</li>
+      <li>Design spec, implementation plan, and ADR-0001…0004.</li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    extended-superpowers · MIT © 2026 Carlos Manzanedo Rueda ·
+    <a href="https://github.com/cmanaha/extended-superpowers/blob/main/CHANGELOG.md">full CHANGELOG.md</a>
+  </div>
+</footer>
+</body>
+</html>

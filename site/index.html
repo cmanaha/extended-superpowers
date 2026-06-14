@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>extended-superpowers — the flywheel loop</title>
+<meta name="description" content="A research-first, adversarially-reviewed, acceptance-gated development loop for Claude Code that builds momentum every turn — a flywheel layered on superpowers." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,900;1,9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Spectral:wght@400;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <span class="brand">extended·<b>superpowers</b></span>
+    <nav>
+      <a href="#why">Why a flywheel</a>
+      <a href="#loop">The loop</a>
+      <a href="#install">Install</a>
+      <a href="./changelog.html">Changelog</a>
+      <a href="https://github.com/cmanaha/extended-superpowers">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero" style="border-top:none;">
+    <div class="heroGrid">
+      <div>
+        <div class="kicker reveal d1">A development loop, not a pipeline</div>
+        <h1 class="reveal d1">It spins. And every turn it <em>gathers momentum.</em></h1>
+        <p class="lede reveal d2">A research-first, adversarially-reviewed, acceptance-gated loop for Claude Code — layered on <a href="https://github.com/obra/superpowers">superpowers</a>, never forking it.
+          <span class="q">The outputs of one turn become the fuel of the next.</span></p>
+      </div>
+      <div class="wheelWrap reveal d3">
+        <!-- FLYWHEEL -->
+        <svg class="flywheel" viewBox="0 0 620 620" role="img" aria-labelledby="fwt fwd">
+          <title id="fwt">The extended-superpowers flywheel</title>
+          <desc id="fwd">Seven phases around a wheel. Amber circles are phases this plugin extends; steel hexagons are the superpowers core they gate. The hub is accumulated memory and momentum that feeds the next turn.</desc>
+          <defs>
+            <g id="hex"><polygon points="0,-52 45,-26 45,26 0,52 -45,26 -45,-26"/></g>
+            <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+              <feGaussianBlur stdDeviation="5" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <marker id="arw" markerWidth="9" markerHeight="9" refX="5" refY="3" orient="auto">
+              <path d="M0,0 L6,3 L0,6 Z" fill="#e8a33d" opacity="0.8"/>
+            </marker>
+          </defs>
+
+          <!-- rims -->
+          <circle cx="310" cy="310" r="255" fill="none" stroke="rgba(236,232,223,0.10)" stroke-width="1" stroke-dasharray="2 8"/>
+          <circle cx="310" cy="310" r="210" fill="none" stroke="rgba(236,232,223,0.08)" stroke-width="1"/>
+          <!-- direction arc (clockwise) -->
+          <path d="M 310 42 A 268 268 0 1 1 60 392" fill="none" stroke="#e8a33d" stroke-opacity="0.30" stroke-width="1.5" marker-end="url(#arw)"/>
+          <!-- orbiting momentum dot -->
+          <g class="spin"><circle cx="310" cy="55" r="8" fill="#e8a33d" filter="url(#glow)"/></g>
+
+          <!-- feedback spokes into the hub -->
+          <g stroke="#e8a33d" stroke-opacity="0.22" stroke-width="1" stroke-dasharray="3 6">
+            <line x1="310" y1="310" x2="474" y2="179"/>
+            <line x1="310" y1="310" x2="515" y2="357"/>
+            <line x1="310" y1="310" x2="401" y2="499"/>
+            <line x1="310" y1="310" x2="219" y2="499"/>
+            <line x1="310" y1="310" x2="146" y2="179"/>
+          </g>
+
+          <!-- gate rings around the superpowers core nodes (adversarial review wraps them) -->
+          <g fill="none" stroke="#e8a33d" stroke-opacity="0.55" stroke-width="1.5" stroke-dasharray="3 4">
+            <circle cx="515" cy="357" r="61"/><circle cx="401" cy="499" r="61"/><circle cx="219" cy="499" r="61"/>
+          </g>
+
+          <!-- nodes -->
+          <!-- ext: planning -->
+          <g class="node"><circle cx="310" cy="100" r="52" fill="rgba(232,163,61,0.15)" stroke="#e8a33d" stroke-width="2"/>
+            <text x="310" y="86" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#9a958a">01</text>
+            <text x="310" y="106" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#ece8df">Planning</text></g>
+          <!-- ext: environment research -->
+          <g class="node"><circle cx="474" cy="179" r="52" fill="rgba(232,163,61,0.15)" stroke="#e8a33d" stroke-width="2"/>
+            <text x="474" y="166" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#9a958a">02</text>
+            <text x="474" y="183" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12.5" fill="#ece8df">Environment</text>
+            <text x="474" y="199" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12.5" fill="#ece8df">research</text></g>
+          <!-- core: brainstorm/spec -->
+          <g class="node"><use href="#hex" transform="translate(515,357)" fill="rgba(132,172,206,0.13)" stroke="#84acce" stroke-width="2"/>
+            <text x="515" y="344" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#9a958a">03</text>
+            <text x="515" y="361" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12.5" fill="#ece8df">Brainstorm</text>
+            <text x="515" y="377" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12.5" fill="#ece8df">→ spec</text></g>
+          <!-- core: plan -->
+          <g class="node"><use href="#hex" transform="translate(401,499)" fill="rgba(132,172,206,0.13)" stroke="#84acce" stroke-width="2"/>
+            <text x="401" y="492" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#9a958a">04</text>
+            <text x="401" y="509" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#ece8df">Plan</text></g>
+          <!-- core: implement -->
+          <g class="node"><use href="#hex" transform="translate(219,499)" fill="rgba(132,172,206,0.13)" stroke="#84acce" stroke-width="2"/>
+            <text x="219" y="492" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#9a958a">05</text>
+            <text x="219" y="509" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#ece8df">Implement</text></g>
+          <!-- ext: acceptance -->
+          <g class="node"><circle cx="105" cy="357" r="52" fill="rgba(232,163,61,0.15)" stroke="#e8a33d" stroke-width="2"/>
+            <text x="105" y="344" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#9a958a">06</text>
+            <text x="105" y="361" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12.5" fill="#ece8df">Acceptance</text>
+            <text x="105" y="377" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12.5" fill="#ece8df">tests</text></g>
+          <!-- ext: definition of done -->
+          <g class="node"><circle cx="146" cy="179" r="52" fill="rgba(232,163,61,0.15)" stroke="#e8a33d" stroke-width="2"/>
+            <text x="146" y="166" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#9a958a">07</text>
+            <text x="146" y="183" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12.5" fill="#ece8df">Definition</text>
+            <text x="146" y="199" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12.5" fill="#ece8df">of Done</text></g>
+
+          <!-- hub -->
+          <circle cx="310" cy="310" r="66" fill="#14161c" stroke="#e8a33d" stroke-width="1.5"/>
+          <text x="310" y="305" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="15" fill="#e8a33d" letter-spacing="1">MEMORY</text>
+          <text x="310" y="326" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="#9a958a">momentum</text>
+        </svg>
+      </div>
+    </div>
+    <div class="legendKey reveal d4">
+      <span class="swatch"><span class="dot ext"></span> phases we extend</span>
+      <span class="swatch"><span class="dot core"></span> superpowers core (gated)</span>
+      <span class="swatch" style="color:#9a958a;">◠ dashed ring = adversarial review wraps it</span>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="sub">// THE IDEA</div>
+    <h2>Why a flywheel, not a pipeline</h2>
+    <p class="body">A pipeline runs once and forgets. A <strong>flywheel</strong> stores momentum — each turn makes the next one easier, and the wheel only spins faster.</p>
+    <p class="body">This loop is built that way. Before any design, a <strong>planning session</strong> researches and an <strong>environment-research</strong> phase actually <em>runs</em> a dependency to learn how it really behaves — and harvests the findings into <strong>memory</strong>. Adversarial review at the spec, plan, and implementation gates turns flaws into recorded corrections. The <strong>definition-of-done</strong> gate is a ratchet: quality can rise but never silently regress.</p>
+    <p class="body">All of that lands in the hub at the center. So the next turn doesn't start cold — it starts with verified knowledge of the terrain, the corrections that already bit you, and a definition of done the tooling enforces. <strong>The outputs become the fuel.</strong> That is the flywheel.</p>
+  </section>
+
+  <section id="loop">
+    <div class="sub">// SEVEN PHASES · TWO OWNERS</div>
+    <h2>The loop</h2>
+    <p class="body" style="margin-bottom:8px;">The plugin never forks superpowers. It <strong>prepends</strong> two research phases, <strong>wraps</strong> the core in adversarial review, and <strong>extends</strong> the end with an executable acceptance tier and a tooling-enforced gate.</p>
+    <div class="phases">
+      <div class="phase ext"><span class="who">extend</span><h3>01 · Planning session</h3><p>Bounded, budgeted research. Every load-bearing claim is checked against the primary source.</p></div>
+      <div class="phase ext"><span class="who">extend</span><h3>02 · Environment research</h3><p>Run the dependency in small, disposable experiments. Code is throwaway; the findings are kept.</p></div>
+      <div class="phase core"><span class="who">superpowers · gated</span><h3>03 · Brainstorm → spec</h3><p>superpowers brainstorming, then adversarial review of the spec across named lenses.</p></div>
+      <div class="phase core"><span class="who">superpowers · gated</span><h3>04 · Writing-plans → plan</h3><p>superpowers planning, then adversarial review of the plan — coverage, testing, anti-hubris.</p></div>
+      <div class="phase core"><span class="who">superpowers · gated</span><h3>05 · Implement</h3><p>subagent-driven development, with spec-compliance then code-quality review at the seams.</p></div>
+      <div class="phase ext"><span class="who">extend</span><h3>06 · Acceptance tests</h3><p>Executable, observable-outcome tests — what the user sees, not just what the code does.</p></div>
+      <div class="phase ext"><span class="who">extend</span><h3>07 · Definition of done</h3><p>A tooling-enforced gate. The model cannot self-certify; a script returns GO or NO-GO.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sub">// WHAT EACH TURN STORES</div>
+    <h2>The momentum is real</h2>
+    <div class="cards">
+      <div class="card"><div class="n">01</div><h4>Verified terrain</h4><p>Environment-research findings — how the dependency actually fails — saved to memory.</p></div>
+      <div class="card"><div class="n">02</div><h4>Corrections</h4><p>Every adversarial finding becomes a recorded correction the next turn won't repeat.</p></div>
+      <div class="card"><div class="n">03</div><h4>Observable criteria</h4><p>Acceptance tests pin what "done" means as runnable, re-runnable checks.</p></div>
+      <div class="card"><div class="n">04</div><h4>An enforced ratchet</h4><p>The definition-of-done gate keeps quality from regressing, turn after turn.</p></div>
+    </div>
+  </section>
+
+  <section id="install">
+    <div class="sub">// GET IT</div>
+    <h2>Install</h2>
+    <p class="body" style="margin-bottom:18px;">In Claude Code, on any machine. <code class="mono">superpowers</code> resolves automatically as a declared dependency.</p>
+    <pre class="cmd"><span class="c">/plugin</span> marketplace add cmanaha/extended-superpowers
+<span class="c">/plugin</span> install extended-superpowers@cmanaha</pre>
+    <p class="note" style="margin-top:16px;">Self-contained and environment-agnostic: it bundles its own review agents and reads from a generic <em>memory</em> store if one is present — never from anyone's personal setup. Restart Claude Code after installing.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    extended-superpowers · MIT © 2026 Carlos Manzanedo Rueda ·
+    <a href="https://github.com/cmanaha/extended-superpowers">github.com/cmanaha/extended-superpowers</a> ·
+    built on <a href="https://github.com/obra/superpowers">superpowers</a>
+  </div>
+</footer>
+</body>
+</html>
