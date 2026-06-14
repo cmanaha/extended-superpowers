@@ -24,8 +24,8 @@ fired () { # prompt -> prints 1 if the skill fired, else 0
 }
 
 posfires=0; negfires=0
-for i in $(seq 1 "$N"); do posfires=$((posfires+$(fired "$pos"))); done
-for i in $(seq 1 "$N"); do negfires=$((negfires+$(fired "$neg"))); done
+for _ in $(seq 1 "$N"); do posfires=$((posfires+$(fired "$pos"))); done
+for _ in $(seq 1 "$N"); do negfires=$((negfires+$(fired "$neg"))); done
 
 pass_pos=$(( (8*N + 9) / 10 ))   # ceil(0.8N)
 pass_neg=$(( (2*N) / 10 ))       # floor(0.2N)

@@ -11,7 +11,8 @@ grep -q '^description: Use when' "$skill" || {
 
 [ -x scripts/eval.sh ] || { echo "missing executable headless eval harness: scripts/eval.sh"; exit 1; }
 # The skill must document the two-tier model (floor + real headless eval).
-grep -qi 'positive' "$skill" && grep -qi 'negative' "$skill" || {
-  echo "acceptance-tests skill must cover positive AND negative triggering"; exit 1; }
+if ! { grep -qi 'positive' "$skill" && grep -qi 'negative' "$skill"; }; then
+  echo "acceptance-tests skill must cover positive AND negative triggering"; exit 1
+fi
 
 echo "ok: acceptance-tests trigger contract + eval harness present"

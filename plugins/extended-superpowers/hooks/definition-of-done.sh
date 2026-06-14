@@ -8,7 +8,7 @@
 #
 # Usage: definition-of-done.sh [path/to/dod.config]   (default: ./dod.config)
 set -uo pipefail
-cd "$(git rev-parse --show-toplevel 2>/dev/null || dirname "$0")"
+cd "$(git rev-parse --show-toplevel 2>/dev/null || dirname "$0")" || exit 1
 cfg="${1:-dod.config}"
 [ -f "$cfg" ] || { echo "no dod.config found at: $cfg"; exit 2; }
 

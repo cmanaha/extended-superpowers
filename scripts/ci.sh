@@ -23,7 +23,7 @@ done
 
 step "3. Shell lint (shellcheck)"
 if command -v shellcheck >/dev/null 2>&1; then
-  shellcheck scripts/ci.sh .githooks/commit-msg plugins/extended-superpowers/hooks/*.sh || fail=1
+  shellcheck scripts/*.sh .githooks/commit-msg plugins/extended-superpowers/hooks/*.sh tests/trigger/*.sh || fail=1
 else
   echo "shellcheck not found — skipping (CI installs it)."
 fi
