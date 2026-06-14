@@ -6,6 +6,14 @@ All notable changes to this project are documented here. This project adheres to
 ## [Unreleased]
 
 ### Added
+- `planning-session` skill (bounded, budgeted research; brief-as-hypothesis;
+  every load-bearing claim cross-checked against the primary source; source-tier
+  classification) + the `research-scout` agent.
+- `orchestrator` skill — sequences the full seven-phase loop and delegates to
+  superpowers; ordering enforced by the SessionStart hook (the E01 lesson). A CI
+  test asserts all seven phases are named.
+- All seven phase skills now ship with trigger tests; the definition-of-done gate
+  certifies this repo GO.
 - `definition-of-done` skill + the tooling-enforced gate
   (`hooks/definition-of-done.sh`) reading a per-project `dod.config` (each
   criterion `required` or `n/a`; any required NO-GO fails). Verified: GO on a

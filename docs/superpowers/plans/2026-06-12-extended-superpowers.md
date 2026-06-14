@@ -62,7 +62,7 @@ Skill triggering and behavioural rubrics are stochastic. No eval is single-run.
 - Milestone 3 — Adversarial-review skill: the full named-lens contract. ✓ DONE — GREEN verified (design-flaw lens finds the planted BLOCKER a cooperative review misses).
 - Milestone 4 — Acceptance-tests skill: real headless trigger evals + harness. ✓ skill + `scripts/eval.sh` DONE (overview 3/3 pos, 0/3 neg). v0.1.0 cut pending a one-time cross-machine install check.
 - Milestone 5 — Definition-of-Done gate: tooling-enforced completion. ✓ DONE — verified GO on clean tree, NO-GO on broken manifest. (Gate wraps ci.sh rather than embedding, avoiding recursion.)
-- Milestone 6 — Planning-session + Orchestrator skills. **Cut v0.2.0 here.**
+- Milestone 6 — Planning-session + Orchestrator skills. ✓ skills + research-scout DONE. Remaining (yours): the full-loop dogfood on a real feature, plus the cross-machine release verification, before tagging v0.1.0 / v0.2.0.
 
 `[rev]` Releases re-cut smaller: the first tag (v0.0.2) ships only after the core
 architecture assumption is *proven* (M2), not after four unproven skills.
