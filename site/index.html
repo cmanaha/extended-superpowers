@@ -28,10 +28,10 @@
   <section class="hero" style="border-top:none;">
     <div class="heroGrid">
       <div>
-        <div class="kicker reveal d1">A development loop, not a pipeline</div>
-        <h1 class="reveal d1">It spins. And every turn it <em>gathers momentum.</em></h1>
-        <p class="lede reveal d2">A research-first, adversarially-reviewed, acceptance-gated loop for Claude Code — layered on <a href="https://github.com/obra/superpowers">superpowers</a>, never forking it.
-          <span class="q">The outputs of one turn become the fuel of the next.</span></p>
+        <div class="kicker reveal d1">The approach I've been taking</div>
+        <h1 class="reveal d1">A development <em>flywheel</em> for Claude Code</h1>
+        <p class="lede reveal d2">A research-first, adversarially-reviewed, acceptance-gated loop, built on <a href="https://github.com/obra/superpowers">superpowers</a>.
+          <span class="q">This is the approach I've been taking over the last three or four months.</span></p>
       </div>
       <div class="wheelWrap reveal d3">
         <!-- FLYWHEEL -->
@@ -120,17 +120,17 @@
   </section>
 
   <section id="why">
-    <div class="sub">// THE IDEA</div>
-    <h2>Why a flywheel, not a pipeline</h2>
-    <p class="body">A pipeline runs once and forgets. A <strong>flywheel</strong> stores momentum — each turn makes the next one easier, and the wheel only spins faster.</p>
-    <p class="body">This loop is built that way. Before any design, a <strong>planning session</strong> researches and an <strong>environment-research</strong> phase actually <em>runs</em> a dependency to learn how it really behaves — and harvests the findings into <strong>memory</strong>. Adversarial review at the spec, plan, and implementation gates turns flaws into recorded corrections. The <strong>definition-of-done</strong> gate is a ratchet: quality can rise but never silently regress.</p>
-    <p class="body">All of that lands in the hub at the center. So the next turn doesn't start cold — it starts with verified knowledge of the terrain, the corrections that already bit you, and a definition of done the tooling enforces. <strong>The outputs become the fuel.</strong> That is the flywheel.</p>
+    <div class="sub">// THE APPROACH</div>
+    <h2>Why I call it a flywheel</h2>
+    <p class="body">Each turn feeds the next. What one turn researches, verifies, and records, the next turn starts from — so the loop carries context forward instead of beginning cold.</p>
+    <p class="body">Before any design, a <strong>planning session</strong> researches and an <strong>environment-research</strong> phase <em>runs</em> a dependency to see how it actually behaves, recording the findings in <strong>memory</strong>. Adversarial review at the spec, plan, and implementation gates turns findings into recorded corrections. The <strong>definition-of-done</strong> gate is enforced by tooling, so &ldquo;done&rdquo; is checked rather than asserted.</p>
+    <p class="body">Those outputs — verified behaviour, recorded corrections, acceptance criteria, an enforced definition of done — are what the next turn starts from.</p>
   </section>
 
   <section id="loop">
     <div class="sub">// SEVEN PHASES · TWO OWNERS</div>
     <h2>The loop</h2>
-    <p class="body" style="margin-bottom:8px;">The plugin never forks superpowers. It <strong>prepends</strong> two research phases, <strong>wraps</strong> the core in adversarial review, and <strong>extends</strong> the end with an executable acceptance tier and a tooling-enforced gate.</p>
+    <p class="body" style="margin-bottom:8px;">Built on superpowers: it <strong>prepends</strong> two research phases, <strong>wraps</strong> the core in adversarial review, and <strong>extends</strong> the end with an executable acceptance tier and a tooling-enforced gate.</p>
     <div class="phases">
       <div class="phase ext"><span class="who">extend</span><h3>01 · Planning session</h3><p>Bounded, budgeted research. Every load-bearing claim is checked against the primary source.</p></div>
       <div class="phase ext"><span class="who">extend</span><h3>02 · Environment research</h3><p>Run the dependency in small, disposable experiments. Code is throwaway; the findings are kept.</p></div>
@@ -143,8 +143,8 @@
   </section>
 
   <section>
-    <div class="sub">// WHAT EACH TURN STORES</div>
-    <h2>The momentum is real</h2>
+    <div class="sub">// WHAT EACH TURN RECORDS</div>
+    <h2>What each turn carries forward</h2>
     <div class="cards">
       <div class="card"><div class="n">01</div><h4>Verified terrain</h4><p>Environment-research findings — how the dependency actually fails — saved to memory.</p></div>
       <div class="card"><div class="n">02</div><h4>Corrections</h4><p>Every adversarial finding becomes a recorded correction the next turn won't repeat.</p></div>
