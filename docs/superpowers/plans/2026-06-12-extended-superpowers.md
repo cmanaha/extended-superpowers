@@ -128,7 +128,7 @@ green, commit-msg guard rejects AI attribution).
   - implementation: spec-compliance, then code-quality (both, in order).
   Dispatch each lens as a fresh `adversarial-reviewer` agent (separate from the
   author), "enumerate, don't fix", loop until clean. Reuse `staff-engineer-reviewer`
-  and pr-review-toolkit agents; query Open Brain for the governing principle.
+  and pr-review-toolkit agents; query memory for the governing principle.
 - [ ] **Step 3: GREEN** — planted flaws in sample spec+plan are found by the
   correct lenses; assert each artifact type dispatches its FULL named-lens set
   (a test counts the lenses, so a single generic reviewer cannot pass). `[rev]`

@@ -23,9 +23,12 @@ for l in "${lenses[@]}"; do
 done
 [ "$missing" -eq 0 ] || { echo "lens contract incomplete"; exit 1; }
 
-# The reviewer agent must exist and be enumerate-only.
-agent="plugins/extended-superpowers/agents/adversarial-reviewer.md"
-[ -f "$agent" ] || { echo "missing agent: $agent"; exit 1; }
-grep -qiE 'enumerate' "$agent" || { echo "reviewer agent must be enumerate-only"; exit 1; }
+# The bundled review agents must exist and be enumerate-only (so the loop is
+# self-contained — no reliance on a personal/external agent).
+for a in adversarial-reviewer spec-compliance-reviewer code-quality-reviewer; do
+  agent="plugins/extended-superpowers/agents/$a.md"
+  [ -f "$agent" ] || { echo "missing bundled agent: $agent"; exit 1; }
+  grep -qiE 'enumerate' "$agent" || { echo "agent must be enumerate-only: $a"; exit 1; }
+done
 
-echo "ok: adversarial-review trigger + full 9-lens contract + reviewer agent present"
+echo "ok: adversarial-review trigger + 9-lens contract + 3 bundled review agents (enumerate-only)"

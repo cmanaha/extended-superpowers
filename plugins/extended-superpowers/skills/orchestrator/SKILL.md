@@ -36,9 +36,11 @@ for precedence; the hook carries it.
 ## Delegation
 
 Reuse superpowers for brainstorming, writing-plans, subagent-driven-development,
-test-driven-development, and verification-before-completion. Reuse this repo's and
-the user's existing review agents (staff-engineer-reviewer, pr-review-toolkit) for
-the adversarial gates. Only add what superpowers lacks; do not boil the ocean.
+test-driven-development, and verification-before-completion. Reuse this plugin's
+own review agents (`adversarial-reviewer`, `spec-compliance-reviewer`,
+`code-quality-reviewer`) for the adversarial gates; if richer specialists like a
+`pr-review-toolkit` plugin are installed, dispatch them too. Only add what
+superpowers lacks; do not boil the ocean.
 
 ## Red flags — stop
 

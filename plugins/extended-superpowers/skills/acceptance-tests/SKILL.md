@@ -41,7 +41,8 @@ A skill's observable outcome is three things; test all three:
 Triggering is stochastic. Every real eval runs N times (default N=5) with
 thresholds: positive-fire ≥ 4/5, negative-fire ≤ 1/5. A grey-band result (e.g.
 3/5) **quarantines** the skill (the eval warns, never silently passes) until the
-description is fixed. Tune descriptions with the `skill-creator` eval scripts.
+description is fixed. Tune descriptions with a skill-eval / description-tuning
+tool (e.g. the `skill-creator` plugin), if available.
 
 ## Optional harness upgrade
 

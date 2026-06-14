@@ -1,5 +1,7 @@
 # extended-superpowers
 
+[![ci](https://github.com/cmanaha/extended-superpowers/actions/workflows/ci.yml/badge.svg)](https://github.com/cmanaha/extended-superpowers/actions/workflows/ci.yml)
+
 A research-first, adversarially-reviewed, acceptance-gated development loop for
 Claude Code, built as a companion plugin on top of
 [superpowers](https://github.com/obra/superpowers).

@@ -6,6 +6,10 @@ All notable changes to this project are documented here. This project adheres to
 ## [Unreleased]
 
 ### Added
+- Environment-agnostic clean copy (ADR-0005): generic `memory` (no personal MCP),
+  bundled `spec-compliance-reviewer` + `code-quality-reviewer` agents so the loop
+  is self-contained, external tools referenced only as optional "if installed",
+  a CI badge, and the spec success-criterion wording reconciled with ADR-0004.
 - Marketplace id is `cmanaha`; install with `extended-superpowers@cmanaha`.
 - `planning-session` skill (bounded, budgeted research; brief-as-hypothesis;
   every load-bearing claim cross-checked against the primary source; source-tier

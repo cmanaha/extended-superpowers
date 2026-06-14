@@ -44,9 +44,11 @@ Phases 6-7 extend verification-before-completion and finishing-a-branch.
   `docs/experiments/<probe>/` (gitignored scratch) → `decisions.jsonl` +
   Lessons → keep/iterate/discard graduation → harvest findings into the brief.
 - `adversarial-review` — parameterised by artifact (spec/plan/impl). Runs the
-  named lenses in parallel, separate model from the author, "enumerate, don't
-  fix", loop until clean. Reuses `staff-engineer-reviewer` and pr-review-toolkit
-  agents; queries Open Brain for the governing principle where available.
+  named lenses in parallel, separate from the author, "enumerate, don't fix",
+  loop until clean. Uses the plugin's own `adversarial-reviewer`,
+  `spec-compliance-reviewer`, and `code-quality-reviewer` agents; richer
+  specialists (e.g. a pr-review-toolkit plugin) are optional; looks up the
+  governing principle in memory where available.
 - `acceptance-tests` — executable observable-outcome tests (what the user sees).
   Owns skill-trigger evals (ADR-0002).
 - `definition-of-done` — assembles and runs the per-project DoD gate.
@@ -55,6 +57,8 @@ Phases 6-7 extend verification-before-completion and finishing-a-branch.
 
 ### Agents
 - `adversarial-reviewer` — a fresh-eyes reviewer with a single named lens.
+- `spec-compliance-reviewer` — implementation lens: did you build what was specified.
+- `code-quality-reviewer` — implementation lens: did you build it right.
 - `research-scout` — bounded research worker with a token budget.
 
 ### Hooks
@@ -90,5 +94,6 @@ Manzanedo Rueda with zero AI attribution (commit-msg hook enforced).
 2. Asking "show me the extended superpowers loop" triggers
    `extended-superpowers-overview`; an unrelated prompt does not.
 3. Each phase skill triggers on its positive prompts and stays silent on its
-   negatives (trigger evals green in CI).
+   negatives (static-contract trigger tests green in CI; headless trigger evals
+   run local/nightly per ADR-0004).
 4. The DoD gate blocks a "done" claim when any criterion fails.

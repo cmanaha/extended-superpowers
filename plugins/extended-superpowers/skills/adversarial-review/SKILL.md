@@ -30,19 +30,22 @@ problems**. Loop until BLOCKER/MAJOR findings are resolved.
   different bug classes (compliance: "did you build what was specified";
   quality: "did you build it correctly").
 - sequencing+anti-hubris enforces "don't boil the ocean — justify every number"
-  (use the `threshold-reasoning` skill on any bare constant).
+  — every bare constant must carry its selection logic (a `threshold-reasoning`
+  skill, if installed, helps).
 
 ## Protocol
 
-1. **Look up the governing principle.** The main session searches Open Brain for
-   the Clean-Architecture / Pragmatic-Programmer principle that applies, and
-   includes it in each reviewer's brief. (Reviewers read files; the principle is
-   passed in, not fetched by the subagent.)
-2. **Dispatch the full lens set in parallel.** One `adversarial-reviewer` agent
-   per lens, separate from the author. Reuse existing specialists where they fit:
-   `staff-engineer-reviewer` (state/modules/races/regression/simplicity),
-   `pr-review-toolkit` (silent-failure-hunter, type-design-analyzer,
-   pr-test-analyzer) for implementation lenses.
+1. **Look up the governing principle.** If a memory store is available (e.g. a
+   `memory` MCP server or a project principles doc), the main session looks up the
+   applicable Clean-Architecture / Pragmatic-Programmer principle and includes it
+   in each reviewer's brief; otherwise it states the principle inline from the
+   artifact's own context. (Reviewers read files; the principle is passed in.)
+2. **Dispatch the full lens set in parallel.** For spec and plan lenses, one
+   `adversarial-reviewer` agent per lens. For the implementation lenses, the
+   bundled `spec-compliance-reviewer` then `code-quality-reviewer`. All run
+   separate from the author. If richer specialists are installed — e.g. a
+   `pr-review-toolkit` plugin, or any structural-review agent — dispatch them as
+   optional add-ons.
 3. **Collect severity-graded findings.** Each reviewer returns lines of
    `[BLOCKER|MAJOR|MINOR] <file>:<where> — <problem> → <fix>` and a one-line
    verdict. No reviewer modifies a file.
