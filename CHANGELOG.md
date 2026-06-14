@@ -6,6 +6,11 @@ All notable changes to this project are documented here. This project adheres to
 ## [Unreleased]
 
 ### Added
+- `definition-of-done` skill + the tooling-enforced gate
+  (`hooks/definition-of-done.sh`) reading a per-project `dod.config` (each
+  criterion `required` or `n/a`; any required NO-GO fails). Verified: GO on a
+  clean tree, NO-GO when a manifest is broken, GO once restored. The gate wraps
+  `scripts/ci.sh` (no recursion) rather than being embedded in it.
 - `acceptance-tests` skill: derive observable-outcome (Given/When/Then) tests
   from spec success criteria, plus the skill-trigger eval discipline (positive +
   negative, two tiers).
