@@ -13,7 +13,7 @@ set -euo pipefail
 PLUGIN_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 overview="${PLUGIN_ROOT}/skills/extended-superpowers-overview/SKILL.md"
 
-context="extended-superpowers is active. For multi-step engineering work, follow the loop: planning-session -> environment-research -> brainstorming -> spec(+adversarial) -> writing-plans(+adversarial) -> implementation(+adversarial) -> acceptance-tests -> definition-of-done. See the extended-superpowers-overview skill for detail."
+context="extended-superpowers is active. For ANY build/create/implement request, you MUST run planning-session and then environment-research BEFORE invoking brainstorming. Assert this ordering explicitly — a skill description alone does not take precedence over brainstorming (verified empirically, experiment E01: 5/5 with this instruction, 0/3 without). Full loop: planning-session -> environment-research -> brainstorming -> spec(+adversarial) -> writing-plans(+adversarial) -> implementation(+adversarial) -> acceptance-tests -> definition-of-done. See the extended-superpowers-overview skill."
 
 # Emit as additionalContext via the documented SessionStart JSON contract.
 printf '{"hookSpecificOutput":{"hookEventName":"SessionStart","additionalContext":%s}}\n' \

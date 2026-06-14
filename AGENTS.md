@@ -9,7 +9,7 @@ For any AI-powered tool (Claude Code, Cursor, Kiro, etc.) working in this repo.
   in commits, PRs, or files. Enforced by `.githooks/commit-msg` and a git-history
   check in `scripts/ci.sh`; do not bypass. (Authorship and copyright metadata
   live in `LICENSE` and the plugin manifests, not in the guard.)
-- **Never commit secrets.** No tokens, keys, or credentials. Test data uses
+- **Never commit or print secrets.** No tokens, keys, or credentials. Test data uses
   fakes only.
 - **The repo must stay installable.** Every commit leaves
   `claude plugin validate ./plugins/extended-superpowers` passing and
@@ -17,10 +17,10 @@ For any AI-powered tool (Claude Code, Cursor, Kiro, etc.) working in this repo.
 
 ## What this plugin is
 
-A companion plugin that depends on `superpowers` and adds: planning-session,
-environment-research, named-lens adversarial review, an executable acceptance
-tier, and a tooling-enforced definition of done. It never forks or edits
-superpowers; it sequences its own phases around superpowers' skills.
+A companion plugin that depends on `superpowers` and adds a prelude: planning-session,
+environment-research, to use before superpowers/brainstorm and then add named-lens adversarial review, 
+for spec and plan phases together with an executable acceptance
+tier, and a tooling-enforced definition of done. The plugin sequences its own phases around superpowers' skills.
 
 ## Document taxonomy (do not conflate)
 
@@ -39,5 +39,6 @@ passes. The model cannot self-certify; tooling certifies.
 ## Engineering discipline
 
 - Atomic, buildable commits; conventional-commit messages.
-- ADR-first: research → decision → code, never reversed.
-- Reuse superpowers; only add what it lacks. Do not boil the ocean.
+- ADR-first: research → decision → code, never reversed, reviewed and preserved and 
+  marked obsolete if something superseeds the decision
+- Reuse superpowers; only add what this additions. Do pragmatic engieering do not boil the ocean.

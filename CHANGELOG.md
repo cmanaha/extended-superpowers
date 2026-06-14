@@ -3,7 +3,18 @@
 All notable changes to this project are documented here. This project adheres to
 [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [0.0.2] — 2026-06-13 — Architecture-validated preview
+
+### Added
+- `environment-research` skill (empirical probe phase) with its harvest-format
+  reference and the disposable-tree contract under `docs/experiments/`.
+- Experiment **E01 (plugin sequencing): GO** — a pre-brainstorm phase runs before
+  superpowers' brainstorming (5/5 with hook-asserted ordering; 0/3 without). The
+  prepend architecture is validated; Milestone 3 unblocked.
+- SessionStart hook now asserts the loop ordering imperatively (the E01 lesson:
+  ordering must be hook-enforced, not left to skill descriptions).
+
+## [0.0.1] — Walking skeleton
 
 ### Added
 - Walking skeleton: marketplace + plugin manifests, the

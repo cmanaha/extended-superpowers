@@ -1,6 +1,6 @@
 {
   "name": "extended-superpowers",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A research-first, adversarially-reviewed, acceptance-gated development loop that extends superpowers with a planning session, an empirical environment-research (probe) phase, named-lens adversarial review at every gate, an executable acceptance-test tier, and a tooling-enforced definition of done.",
   "author": {
     "name": "Carlos Manzanedo Rueda",
