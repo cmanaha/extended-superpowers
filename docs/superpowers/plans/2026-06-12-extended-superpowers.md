@@ -59,7 +59,7 @@ Skill triggering and behavioural rubrics are stochastic. No eval is single-run.
 
 - Milestone 1 — Walking skeleton: an installable empty plugin. (built this session)
 - Milestone 2 — Environment-research skill + the E01 architecture gate. ✓ DONE — E01 **GO** (5/5); v0.0.2 cut. `[rev]`
-- Milestone 3 — Adversarial-review skill: the full named-lens contract.
+- Milestone 3 — Adversarial-review skill: the full named-lens contract. ✓ DONE — GREEN verified (design-flaw lens finds the planted BLOCKER a cooperative review misses).
 - Milestone 4 — Acceptance-tests skill: real headless trigger evals + harness. **Cut v0.1.0 here.**
 - Milestone 5 — Definition-of-Done gate: tooling-enforced completion.
 - Milestone 6 — Planning-session + Orchestrator skills. **Cut v0.2.0 here.**

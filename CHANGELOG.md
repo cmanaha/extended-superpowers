@@ -3,6 +3,20 @@
 All notable changes to this project are documented here. This project adheres to
 [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Added
+- `adversarial-review` skill with the binding 9-lens contract (spec:
+  factual-grounding, completeness, design-flaw/race, testability/DoD; plan:
+  spec-coverage+guardrails, testing+trackability, sequencing+anti-hubris;
+  implementation: spec-compliance then code-quality), plus the
+  `adversarial-reviewer` agent (enumerate-only, one lens each).
+- Lens-completeness CI test — a single generic reviewer cannot stand in for the
+  full named-lens set.
+- Verified GREEN: given only the spec body, the design-flaw/race lens
+  independently finds the planted BLOCKER (an unwritten reconnect cursor) that a
+  cooperative self-review marks "ready".
+
 ## [0.0.2] — 2026-06-13 — Architecture-validated preview
 
 ### Added
