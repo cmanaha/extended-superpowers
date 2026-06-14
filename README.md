@@ -26,7 +26,7 @@ In Claude Code, from any machine:
 
 ```
 /plugin marketplace add cmanaha/extended-superpowers
-/plugin install extended-superpowers@manzanedo
+/plugin install extended-superpowers@cmanaha
 ```
 
 `superpowers` is a declared dependency and resolves automatically. Restart

@@ -4,7 +4,7 @@ The normal install (see README) is:
 
 ```
 /plugin marketplace add cmanaha/extended-superpowers
-/plugin install extended-superpowers@manzanedo
+/plugin install extended-superpowers@cmanaha
 ```
 
 `superpowers` resolves automatically because this marketplace permits the

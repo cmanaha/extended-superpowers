@@ -71,10 +71,10 @@ Phases 6-7 extend verification-before-completion and finishing-a-branch.
 
 ## Distribution
 
-This repo is the marketplace (`manzanedo`) and hosts the plugin
+This repo is the marketplace (`cmanaha`) and hosts the plugin
 (`extended-superpowers`). Install anywhere:
 `/plugin marketplace add cmanaha/extended-superpowers` then
-`/plugin install extended-superpowers@manzanedo`. superpowers resolves as a
+`/plugin install extended-superpowers@cmanaha`. superpowers resolves as a
 declared dependency.
 
 ## Definition of done (for the plugin itself)

@@ -78,7 +78,7 @@ green, commit-msg guard rejects AI attribution).
 - [ ] **Manual one-time gates (NOT CI/regression)** `[rev]` — these require an
   interactive session and a human; they are a one-time smoke check, not a
   reproducible contract (the reproducible version arrives in M4 as headless
-  tests): (a) `/plugin marketplace add ./` + `/plugin install extended-superpowers@manzanedo`
+  tests): (a) `/plugin marketplace add ./` + `/plugin install extended-superpowers@cmanaha`
   installs and pulls superpowers; (b) "show me the extended superpowers loop"
   fires the overview skill; an unrelated prompt does not.
 - [x] Authorship guard: hook rejects an AI-attributed message; ci.sh checks

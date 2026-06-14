@@ -6,6 +6,7 @@ All notable changes to this project are documented here. This project adheres to
 ## [Unreleased]
 
 ### Added
+- Marketplace id is `cmanaha`; install with `extended-superpowers@cmanaha`.
 - `planning-session` skill (bounded, budgeted research; brief-as-hypothesis;
   every load-bearing claim cross-checked against the primary source; source-tier
   classification) + the `research-scout` agent.
