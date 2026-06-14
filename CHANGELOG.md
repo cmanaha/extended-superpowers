@@ -6,6 +6,17 @@ All notable changes to this project are documented here. This project adheres to
 ## [Unreleased]
 
 ### Added
+- `acceptance-tests` skill: derive observable-outcome (Given/When/Then) tests
+  from spec success criteria, plus the skill-trigger eval discipline (positive +
+  negative, two tiers).
+- `scripts/eval.sh`: real headless skill-trigger eval (copies a skill into a
+  throwaway project, runs `claude -p`, N runs, thresholds pos ≥ 4/5 / neg ≤ 1/5,
+  grey-band quarantine). Verified: `extended-superpowers-overview` fired 3/3 on
+  the positive prompt, 0/3 on the negative.
+- ADR-0004 (eval harness: in-repo headless floor; promptfoo/cc-plugin-eval an
+  optional upgrade) and `docs/install-fallback.md` for locked-down machines.
+- v0.1.0 is staged; the remaining release gate is a one-time cross-machine
+  install check (the two install commands work and superpowers auto-resolves).
 - `adversarial-review` skill with the binding 9-lens contract (spec:
   factual-grounding, completeness, design-flaw/race, testability/DoD; plan:
   spec-coverage+guardrails, testing+trackability, sequencing+anti-hubris;
