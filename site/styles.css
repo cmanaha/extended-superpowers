@@ -134,3 +134,17 @@ svg.flywheel .node { cursor: default; transition: transform .25s ease; transform
 svg.flywheel .node:hover { transform: scale(1.06); }
 .spin { transform-origin: 310px 310px; animation: orbit 11s linear infinite; }
 @keyframes orbit { to { transform: rotate(360deg); } }
+
+/* research callout + complexity dial */
+.callout { background: var(--panel); border: 1px solid var(--faint); border-left: 3px solid var(--amber); border-radius: 10px; padding: 20px 24px; margin-top: 18px; }
+.callout p { margin: 0; max-width: 64ch; color: #e6e1d6; font-size: 17px; line-height: 1.6; }
+.dial { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+@media (max-width: 760px) { .dial { grid-template-columns: 1fr; } }
+.opt { background: var(--bg-2); border: 1px solid var(--faint); border-radius: 10px; padding: 20px 22px; }
+.opt.full { border-top: 3px solid var(--amber); }
+.opt.light { border-top: 3px solid var(--steel); }
+.opt h4 { font-family: "IBM Plex Mono", monospace; font-size: 14px; font-weight: 500; margin: 0 0 8px; }
+.opt.full h4 { color: var(--amber); }
+.opt.light h4 { color: var(--steel); }
+.opt p { margin: 0; font-size: 15.5px; color: #cfcabf; line-height: 1.55; }
+.costline { font-family: "IBM Plex Mono", monospace; font-size: 13px; color: var(--muted); margin-top: 20px; line-height: 1.6; max-width: 72ch; }
