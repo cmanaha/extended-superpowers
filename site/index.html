@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>extended-superpowers — the flywheel loop</title>
-<meta name="description" content="A research-first, adversarially-reviewed, acceptance-gated development loop for Claude Code that builds momentum every turn — a flywheel layered on superpowers." />
+<title>extended-superpowers: the flywheel loop</title>
+<meta name="description" content="A research-first, adversarially-reviewed, acceptance-gated development loop for Claude Code that builds momentum every turn, a flywheel layered on superpowers." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,900;1,9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Spectral:wght@400;600&display=swap" rel="stylesheet" />
@@ -34,7 +34,7 @@
         <h1 class="reveal d1">A development <em>flywheel</em> for Claude Code</h1>
         <p class="lede reveal d2">A research-first, adversarially-reviewed, acceptance-gated loop, built on <a href="https://github.com/obra/superpowers">superpowers</a>.
           <span class="q">This is the approach I've been taking over the last three or four months.</span></p>
-        <p class="reveal d2" style="margin-top:18px;font-family:monospace;font-size:14px;"><a href="./experience.html">→ Why I built this — the motivation &amp; the data</a></p>
+        <p class="reveal d2" style="margin-top:18px;font-family:monospace;font-size:14px;"><a href="./experience.html">→ Why I built this: the motivation &amp; the data</a></p>
       </div>
       <div class="wheelWrap reveal d3">
         <!-- FLYWHEEL -->
@@ -125,18 +125,18 @@
   <section id="why">
     <div class="sub">// THE APPROACH</div>
     <h2>Why I call it a flywheel</h2>
-    <p class="body">Each turn feeds the next. What one turn researches, verifies, and records, the next turn starts from — so the loop carries context forward instead of beginning cold.</p>
+    <p class="body">Each turn feeds the next. What one turn researches, verifies, and records, the next turn starts from, so the loop carries context forward instead of beginning cold.</p>
     <p class="body">Before any design, a <strong>planning session</strong> researches and an <strong>environment-research</strong> phase <em>runs</em> a dependency to see how it actually behaves, recording the findings in <strong>memory</strong>. Adversarial review at the spec, plan, and implementation gates turns findings into recorded corrections. The <strong>definition-of-done</strong> gate is enforced by tooling, so &ldquo;done&rdquo; is checked rather than asserted.</p>
-    <p class="body">Those outputs — verified behaviour, recorded corrections, acceptance criteria, an enforced definition of done — are what the next turn starts from.</p>
+    <p class="body">Those outputs (verified behaviour, recorded corrections, acceptance criteria, an enforced definition of done) are what the next turn starts from.</p>
   </section>
 
   <section id="research">
     <div class="sub">// THE PHASE I LEAN ON</div>
     <h2>Why the research phase</h2>
-    <p class="body">Documentation tells you what a library is meant to do. It rarely tells you how it behaves once its pieces combine, or how it fails. Over time I found that the gap between the docs and the real behaviour — the error modes and integration modes that only surface when you actually run things — is exactly where an agent quietly designs against a wrong assumption.</p>
-    <p class="body">You don't feel it then. You feel it later: debugging, walking the code, hunting a failure the spec never accounted for. With a complex enough combination of libraries, an AI won't anticipate every error mode — and recovering from that downstream is slow and frustrating.</p>
+    <p class="body">Documentation tells you what a library is meant to do. It rarely tells you how it behaves once its pieces combine, or how it fails. Over time I found that the gap between the docs and the real behaviour, the error modes and integration modes that only surface when you actually run things, is exactly where an agent quietly designs against a wrong assumption.</p>
+    <p class="body">You don't feel it then. You feel it later: debugging, walking the code, hunting a failure the spec never accounted for. With a complex enough combination of libraries, an AI won't anticipate every error mode, and recovering from that downstream is slow and frustrating.</p>
     <div class="callout">
-      <p>So before any spec or plan, I run small experiments against the real dependency — exercise it, provoke its failures, learn its error and integration modes — and fold the findings into the spec. It costs time up front; it saves a far worse loop later.</p>
+      <p>So before any spec or plan, I run small experiments against the real dependency: exercise it, provoke its failures, learn its error and integration modes, then fold the findings into the spec. It costs time up front, and saves a far worse loop later.</p>
     </div>
   </section>
 
@@ -148,9 +148,9 @@
       <div class="phase ext"><span class="who">extend</span><h3>01 · Planning session</h3><p>Bounded, budgeted research. Every load-bearing claim is checked against the primary source.</p></div>
       <div class="phase ext"><span class="who">extend</span><h3>02 · Environment research</h3><p>Run the dependency in small, disposable experiments. Code is throwaway; the findings are kept.</p></div>
       <div class="phase core"><span class="who">superpowers · gated</span><h3>03 · Brainstorm → spec</h3><p>superpowers brainstorming, then adversarial review of the spec across named lenses.</p></div>
-      <div class="phase core"><span class="who">superpowers · gated</span><h3>04 · Writing-plans → plan</h3><p>superpowers planning, then adversarial review of the plan — coverage, testing, anti-hubris.</p></div>
+      <div class="phase core"><span class="who">superpowers · gated</span><h3>04 · Writing-plans → plan</h3><p>superpowers planning, then adversarial review of the plan: coverage, testing, anti-hubris.</p></div>
       <div class="phase core"><span class="who">superpowers · gated</span><h3>05 · Implement</h3><p>subagent-driven development, with spec-compliance then code-quality review at the seams.</p></div>
-      <div class="phase ext"><span class="who">extend</span><h3>06 · Acceptance tests</h3><p>Executable, observable-outcome tests — what the user sees, not just what the code does.</p></div>
+      <div class="phase ext"><span class="who">extend</span><h3>06 · Acceptance tests</h3><p>Executable, observable-outcome tests: what the user sees, not just what the code does.</p></div>
       <div class="phase ext"><span class="who">extend</span><h3>07 · Definition of done</h3><p>A tooling-enforced gate. The model cannot self-certify; a script returns GO or NO-GO.</p></div>
     </div>
   </section>
@@ -159,7 +159,7 @@
     <div class="sub">// WHAT EACH TURN RECORDS</div>
     <h2>What each turn carries forward</h2>
     <div class="cards">
-      <div class="card"><div class="n">01</div><h4>Verified terrain</h4><p>Environment-research findings — how the dependency actually fails — saved to memory.</p></div>
+      <div class="card"><div class="n">01</div><h4>Verified terrain</h4><p>Environment-research findings (how the dependency actually fails), saved to memory.</p></div>
       <div class="card"><div class="n">02</div><h4>Corrections</h4><p>Every adversarial finding becomes a recorded correction the next turn won't repeat.</p></div>
       <div class="card"><div class="n">03</div><h4>Observable criteria</h4><p>Acceptance tests pin what "done" means as runnable, re-runnable checks.</p></div>
       <div class="card"><div class="n">04</div><h4>An enforced ratchet</h4><p>The definition-of-done gate keeps quality from regressing, turn after turn.</p></div>
@@ -169,12 +169,12 @@
   <section id="scale">
     <div class="sub">// SCALE IT TO THE PROBLEM</div>
     <h2>Not every phase, every time</h2>
-    <p class="body">These phases are optional. I dial them to how complex the problem is — the harder it is, the more time I spend on research and review; the more I already know going in, the less.</p>
+    <p class="body">These phases are optional. I dial them to how complex the problem is. The harder it is, the more time I spend on research and review; the more I already know going in, the less.</p>
     <div class="dial">
       <div class="opt full"><h4>Complex problem → the full cycle</h4><p>When I'm aiming a heavily-leveraged agentic run that will work for hours, I run everything: research, environment-research, adversarial review at every gate, acceptance tests, and the enforced definition of done. For that kind of autonomous work, the resilience is worth the cost.</p></div>
       <div class="opt light"><h4>Known, local change → the light path</h4><p>When I know exactly which part of the architecture I'm touching, I drop most of it and keep superpowers' original loop plus the definition of done and telemetry. No point running an hours-long gauntlet on a small, well-understood change.</p></div>
     </div>
-    <p class="costline">It trades tokens for resilience — by Anthropic's own data, multi-agent runs use on the order of 15× the tokens of a single chat. So grade the loop to the blast radius: heavy where a missed bug is expensive, light everywhere else.</p>
+    <p class="costline">It trades tokens for resilience. By Anthropic's own data, multi-agent runs use on the order of 15× the tokens of a single chat, so grade the loop to the blast radius: heavy where a missed bug is expensive, light everywhere else.</p>
   </section>
 
   <section id="install">
@@ -183,7 +183,7 @@
     <p class="body" style="margin-bottom:18px;">In Claude Code, on any machine. <code class="mono">superpowers</code> resolves automatically as a declared dependency.</p>
     <pre class="cmd"><span class="c">/plugin</span> marketplace add cmanaha/extended-superpowers
 <span class="c">/plugin</span> install extended-superpowers@cmanaha</pre>
-    <p class="note" style="margin-top:16px;">Self-contained and environment-agnostic: it bundles its own review agents and reads from a generic <em>memory</em> store if one is present — never from anyone's personal setup. Restart Claude Code after installing.</p>
+    <p class="note" style="margin-top:16px;">Self-contained and environment-agnostic: it bundles its own review agents and reads from a generic <em>memory</em> store if one is present, never from anyone's personal setup. Restart Claude Code after installing.</p>
   </section>
 </main>
 

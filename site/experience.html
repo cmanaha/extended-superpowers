@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>extended-superpowers — motivation &amp; data</title>
-<meta name="description" content="It started with telemetry. What I found, over four months, reading my own Claude Code sessions and /insights — and why it shaped the loop." />
+<title>extended-superpowers: motivation &amp; data</title>
+<meta name="description" content="It started with telemetry. What I found, over four months, reading my own Claude Code sessions and /insights, and why it shaped the loop." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,900;1,9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Spectral:wght@400;600&display=swap" rel="stylesheet" />
@@ -44,17 +44,17 @@
   <section class="hero" style="border-top:none;">
     <div class="kicker reveal d1">Motivation &amp; data</div>
     <h1 class="reveal d1" style="max-width:16ch;">It started with <em>telemetry.</em></h1>
-    <p class="lede reveal d2">I didn't set out to build a methodology. I set out to understand where my time was going — so I instrumented my own work, and I started reading Claude Code's <code class="mono">/insights</code> to see how I actually operate. What follows is what I found over about four months. It's not a pitch; it's a record.</p>
+    <p class="lede reveal d2">I didn't set out to build a methodology. I set out to understand where my time was going, so I instrumented my own work and started reading Claude Code's <code class="mono">/insights</code> to see how I actually operate. What follows is what I found over about four months, written down plainly.</p>
   </section>
 
   <section style="border-top:none; padding-top:10px;">
-    <p class="body">I measure things — in the systems I build, and in how I work. Reading my own session data wasn't about chasing a number. It was a simple question: where does my attention go, and how do I get more leverage from the hours I have? The charts below are drawn from my own git history, my session transcripts, and my <code class="mono">/insights</code> reports. Every one carries its source and its caveats.</p>
+    <p class="body">I measure things, both in the systems I build and in how I work. Reading my own session data wasn't about chasing a number. It was a simple question: where does my attention go, and how do I get more leverage from the hours I have? The charts below are drawn from my own git history, my session transcripts, and my <code class="mono">/insights</code> reports. Every one carries its source and its caveats.</p>
   </section>
 
   <!-- BEAT 1: timeline -->
   <div class="beat">
     <p class="point">1 · This has been my default for about four months.</p>
-    <p class="body">Not a new idea — a habit. The same scaffold (CI gates, decision records, specs, plans, agent review) shows up from my earliest 2026 repo, and became automatic in every repo I started after.</p>
+    <p class="body">It's a habit by now. The same scaffold (CI gates, decision records, specs, plans, agent review) shows up from my earliest 2026 repo, and became automatic in every repo I started after.</p>
     <figure class="chart">
       <svg viewBox="0 0 900 210" role="img" aria-label="Timeline of methodology adoption, February to June 2026">
         <line x1="60" y1="130" x2="860" y2="130" stroke="rgba(236,232,223,0.18)" stroke-width="1.5"/>
@@ -86,10 +86,10 @@
 
   <!-- BEAT 2: drive by intent -->
   <div class="beat">
-    <p class="point">2 · I spend my attention deciding — then let the agents run.</p>
+    <p class="point">2 · I spend my attention deciding, then let the agents run.</p>
     <p class="body">The data reads like dictation, not back-and-forth. The gaps between my messages are long because the agents are working in them, and in a long session they take many steps of work for each thing I say.</p>
     <div class="stats">
-      <div class="stat"><div class="big">≈ 4 min</div><div class="lbl">median time between my messages — the agents run in the gap</div></div>
+      <div class="stat"><div class="big">≈ 4 min</div><div class="lbl">median time between my messages; the agents run in the gap</div></div>
       <div class="stat"><div class="big">≈ 10×</div><div class="lbl">turns of agent work per message I send, in multi-hour sessions</div></div>
     </div>
     <figure class="chart" style="margin-top:24px;">
@@ -107,7 +107,7 @@
   <!-- BEAT 3: long autonomous runs -->
   <div class="beat">
     <p class="point">3 · Some of the work runs for hours, on its own.</p>
-    <p class="body">Most sessions are short. But a real share of them run for hours of continuous build-and-verify while I'm doing something else — the longest I measured was around nine hours unbroken.</p>
+    <p class="body">Most sessions are short. But a real share of them run for hours of continuous build-and-verify while I'm doing something else. The longest I measured was around nine hours unbroken.</p>
     <figure class="chart">
       <svg viewBox="0 0 900 232" role="img" aria-label="Distribution of session length: most under an hour, about one in ten over three hours">
         <g font-family="IBM Plex Mono, monospace" font-size="13" fill="#ece8df">
@@ -125,16 +125,16 @@
         </g>
         <text x="180" y="220" font-family="IBM Plex Mono, monospace" font-size="12" fill="#9a958a">longest single continuous run measured ≈ 9 hours</text>
       </svg>
-      <figcaption>Source: measured from ~2,400 of my own session transcripts (active wall-clock, sampled). Proportions are indicative — long sessions are over-sampled by design; the durations are real.</figcaption>
+      <figcaption>Source: measured from ~2,400 of my own session transcripts (active wall-clock, sampled). Proportions are indicative (long sessions are over-sampled by design); the durations are real.</figcaption>
     </figure>
   </div>
 
   <!-- BEAT 4: parallel -->
   <div class="beat">
     <p class="point">4 · Often, more than one is running at once.</p>
-    <p class="body">A growing share of my messages go out while a second session is already working. Parallel, not serial.</p>
+    <p class="body">A growing share of my messages go out while a second session is already working. Often two are running at the same time.</p>
     <div class="stats">
-      <div class="stat"><div class="big">1 in 4</div><div class="lbl">of my messages sent while another session is already running — up from 1 in 5 a window earlier</div></div>
+      <div class="stat"><div class="big">1 in 4</div><div class="lbl">of my messages sent while another session is already running, up from 1 in 5 a window earlier</div></div>
     </div>
     <p class="src">Source: my own /insights (multi-clauding overlap), two windows, 29 May → 6 Jun 2026.</p>
   </div>
@@ -142,7 +142,7 @@
   <!-- BEAT 5: outcomes -->
   <div class="beat">
     <p class="point">5 · Directionally, more of it lands.</p>
-    <p class="body">Across two windows a week apart, the share of sessions that mostly or fully achieved what I set out to do moved up. One small movement — not a trend I'd stake anything on — but it points the right way.</p>
+    <p class="body">Across two windows a week apart, the share of sessions that mostly or fully achieved what I set out to do moved up. One small movement, not a trend I'd stake anything on, but it points the right way.</p>
     <figure class="chart">
       <svg viewBox="0 0 900 172" role="img" aria-label="Mostly-or-fully-achieved share rose from about 64 percent to about 75 percent">
         <g font-family="IBM Plex Mono, monospace" font-size="13" fill="#ece8df">
@@ -156,14 +156,14 @@
           <text x="704" y="128">~75%</text>
         </g>
       </svg>
-      <figcaption>Source: my own /insights, two windows. These outcome labels are model-inferred by Claude, not ground truth, and the windows differ in length — treat as directional, not measured.</figcaption>
+      <figcaption>Source: my own /insights, two windows. These outcome labels are model-inferred by Claude, not ground truth, and the windows differ in length, so treat this as directional rather than measured.</figcaption>
     </figure>
   </div>
 
   <!-- BEAT 6: friction -->
   <div class="beat">
-    <p class="point">6 · My friction is choosing what to build — not fixing what got built.</p>
-    <p class="body">This is the one that changed how I work. When I read where my sessions actually go wrong, the top two causes weren't bugs. They were "wrong approach" and "misunderstood request" — scoping. The rigor layer (tests, review, the done-gate) takes correctness off my plate; what's left is deciding the right thing to build. That is why the loop front-loads research and review, and why the research phase exists at all.</p>
+    <p class="point">6 · My friction is choosing what to build, not fixing what got built.</p>
+    <p class="body">This is the one that changed how I work. When I read where my sessions actually go wrong, the top two causes weren't bugs. They were "wrong approach" and "misunderstood request", both about scoping. The rigor layer (tests, review, the done-gate) takes correctness off my plate; what's left is deciding the right thing to build. That is why the loop front-loads research and review, and why the research phase exists at all.</p>
     <figure class="chart">
       <svg viewBox="0 0 900 200" role="img" aria-label="Top friction types are wrong approach and misunderstood request, both about scoping">
         <g font-family="IBM Plex Mono, monospace" font-size="13" fill="#ece8df">
@@ -172,30 +172,30 @@
         </g>
         <rect x="230" y="48" width="630" height="34" fill="#e8a33d" rx="3"/>
         <rect x="230" y="106" width="472" height="34" fill="rgba(232,163,61,0.55)" rx="3"/>
-        <text x="230" y="178" font-family="IBM Plex Mono, monospace" font-size="12" fill="#9a958a">buggy code ranks below both — correctness is the part the loop already handles</text>
+        <text x="230" y="178" font-family="IBM Plex Mono, monospace" font-size="12" fill="#9a958a">buggy code ranks below both; correctness is the part the loop already handles</text>
       </svg>
-      <figcaption>Source: my own /insights friction taxonomy (model-inferred). Both leading friction types are about intent, not implementation.</figcaption>
+      <figcaption>Source: my own /insights friction taxonomy (model-inferred). Both leading friction types are about intent rather than implementation.</figcaption>
     </figure>
   </div>
 
   <!-- honesty -->
   <section>
     <div class="honest">
-      <h3>What this is — and isn't</h3>
+      <h3>What this is, and what it isn't</h3>
       <ul>
         <li>It's a single person's data, over about four months. There's no control group and no baseline to compare against.</li>
-        <li>The satisfaction, outcome, and friction labels come from Claude reading my sessions — they're model-inferred, not measured ground truth.</li>
+        <li>The satisfaction, outcome, and friction labels come from Claude reading my sessions; they're model-inferred, not measured ground truth.</li>
         <li>I can't perfectly separate my interactive work from automated and evaluation runs, so I've kept the durations concrete and treated the ratios as indicative.</li>
         <li>I've deliberately left out the bigger "multiplier" numbers I sometimes see in my own telemetry. They're my own rough estimates, and this page is for the things I can actually point to.</li>
       </ul>
     </div>
-    <p class="body" style="margin-top:26px;">None of this proves the loop is better than some other way of working. It's just what I found when I looked — long autonomous stretches, thin steering, and my own attention spent on what to build rather than on debugging. That's the shape that made me write the loop down, and share it.</p>
+    <p class="body" style="margin-top:26px;">None of this proves the loop is better than some other way of working. It's just what I found when I looked: long autonomous stretches, thin steering, and my own attention spent on what to build rather than on debugging. That's the shape that made me write the loop down, and share it.</p>
   </section>
 </main>
 
 <footer>
   <div class="wrap">
-    Most of this — the plugin, this site, the code behind it — wasn't written at a keyboard. It was dictated to a pair of smart glasses, hands-free, in between other things. The console was the exception, not the rule.
+    Most of this (the plugin, this site, the code behind it) wasn't written at a keyboard. It was dictated to a pair of smart glasses, hands-free, in between other things. I rarely used the console.
     <br><br>
     extended-superpowers · MIT © 2026 Carlos Manzanedo Rueda ·
     <a href="https://github.com/cmanaha/extended-superpowers">github.com/cmanaha/extended-superpowers</a>
