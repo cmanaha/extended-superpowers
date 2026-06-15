@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>extended-superpowers — motivation &amp; data</title>
+<meta name="description" content="It started with telemetry. What I found, over four months, reading my own Claude Code sessions and /insights — and why it shaped the loop." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,900;1,9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Spectral:wght@400;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="./styles.css" />
+<style>
+  .beat { padding: 50px 0; border-top: 1px solid var(--faint); }
+  .beat .point { font-family: "Fraunces", serif; font-weight: 600; font-size: clamp(24px, 3.4vw, 36px); letter-spacing: -0.01em; margin: 0 0 10px; }
+  .beat p.body { max-width: 64ch; }
+  .src { font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--muted); margin-top: 12px; letter-spacing: 0.02em; }
+  figure.chart { margin: 22px 0 0; background: var(--panel); border: 1px solid var(--faint); border-radius: 12px; padding: 22px 24px; }
+  figure.chart svg { width: 100%; height: auto; display: block; }
+  figure.chart figcaption { font-family: "IBM Plex Mono", monospace; font-size: 11.5px; color: var(--muted); margin-top: 14px; line-height: 1.5; }
+  .stats { display: flex; gap: 36px; flex-wrap: wrap; margin-top: 22px; }
+  .stat .big { font-family: "Fraunces", serif; font-weight: 900; font-size: clamp(44px, 8vw, 74px); color: var(--amber); line-height: 0.95; }
+  .stat .lbl { font-family: "IBM Plex Mono", monospace; font-size: 13px; color: var(--muted); max-width: 24ch; margin-top: 8px; line-height: 1.5; }
+  .honest { background: var(--bg-2); border: 1px solid var(--faint); border-radius: 12px; padding: 22px 26px; margin-top: 22px; }
+  .honest h3 { font-family: "IBM Plex Mono", monospace; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--steel); margin: 0 0 10px; }
+  .honest ul { margin: 0; padding-left: 18px; max-width: 70ch; }
+  .honest li { color: #cfcabf; font-size: 15.5px; line-height: 1.55; padding: 3px 0; }
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="./index.html" style="text-decoration:none;">extended·<b>superpowers</b></a>
+    <nav>
+      <a href="./index.html#research">Research</a>
+      <a href="./index.html#loop">The loop</a>
+      <a href="./experience.html">Experience</a>
+      <a href="./index.html#install">Install</a>
+      <a href="https://github.com/cmanaha/extended-superpowers">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero" style="border-top:none;">
+    <div class="kicker reveal d1">Motivation &amp; data</div>
+    <h1 class="reveal d1" style="max-width:16ch;">It started with <em>telemetry.</em></h1>
+    <p class="lede reveal d2">I didn't set out to build a methodology. I set out to understand where my time was going — so I instrumented my own work, and I started reading Claude Code's <code class="mono">/insights</code> to see how I actually operate. What follows is what I found over about four months. It's not a pitch; it's a record.</p>
+  </section>
+
+  <section style="border-top:none; padding-top:10px;">
+    <p class="body">I measure things — in the systems I build, and in how I work. Reading my own session data wasn't about chasing a number. It was a simple question: where does my attention go, and how do I get more leverage from the hours I have? The charts below are drawn from my own git history, my session transcripts, and my <code class="mono">/insights</code> reports. Every one carries its source and its caveats.</p>
+  </section>
+
+  <!-- BEAT 1: timeline -->
+  <div class="beat">
+    <p class="point">1 · This has been my default for about four months.</p>
+    <p class="body">Not a new idea — a habit. The same scaffold (CI gates, decision records, specs, plans, agent review) shows up from my earliest 2026 repo, and became automatic in every repo I started after.</p>
+    <figure class="chart">
+      <svg viewBox="0 0 900 210" role="img" aria-label="Timeline of methodology adoption, February to June 2026">
+        <line x1="60" y1="130" x2="860" y2="130" stroke="rgba(236,232,223,0.18)" stroke-width="1.5"/>
+        <!-- month ticks -->
+        <g font-family="IBM Plex Mono, monospace" font-size="12" fill="#9a958a" text-anchor="middle">
+          <line x1="70" y1="125" x2="70" y2="135" stroke="rgba(236,232,223,0.18)"/><text x="70" y="155">Feb</text>
+          <line x1="230" y1="125" x2="230" y2="135" stroke="rgba(236,232,223,0.18)"/><text x="230" y="155">Mar</text>
+          <line x1="410" y1="125" x2="410" y2="135" stroke="rgba(236,232,223,0.18)"/><text x="410" y="155">Apr</text>
+          <line x1="590" y1="125" x2="590" y2="135" stroke="rgba(236,232,223,0.18)"/><text x="590" y="155">May</text>
+          <line x1="770" y1="125" x2="770" y2="135" stroke="rgba(236,232,223,0.18)"/><text x="770" y="155">Jun</text>
+        </g>
+        <!-- milestones: dot + stem + label, staggered -->
+        <g font-family="IBM Plex Mono, monospace" font-size="12.5" fill="#ece8df">
+          <line x1="95"  y1="130" x2="95"  y2="74" stroke="#e8a33d" stroke-width="1"/><circle cx="95" cy="130" r="6" fill="#e8a33d"/>
+          <text x="95" y="62" text-anchor="middle">Feb 7 · first repo:</text><text x="95" y="46" text-anchor="middle" fill="#9a958a">CI + specs</text>
+          <line x1="231" y1="130" x2="231" y2="186" stroke="#e8a33d" stroke-width="1"/><circle cx="231" cy="130" r="6" fill="#e8a33d"/>
+          <text x="231" y="200" text-anchor="middle">Mar 2 · every new repo</text>
+          <line x1="455" y1="130" x2="455" y2="92" stroke="#e8a33d" stroke-width="1"/><circle cx="455" cy="130" r="6" fill="#e8a33d"/>
+          <text x="455" y="80" text-anchor="middle">Apr 9 · definition-of-done</text>
+          <line x1="744" y1="130" x2="744" y2="186" stroke="#e8a33d" stroke-width="1"/><circle cx="744" cy="130" r="6" fill="#e8a33d"/>
+          <text x="744" y="200" text-anchor="middle">May 28 · environment-research</text>
+          <line x1="845" y1="130" x2="845" y2="92" stroke="#84acce" stroke-width="1"/><circle cx="845" cy="130" r="6" fill="#84acce"/>
+          <text x="845" y="80" text-anchor="middle" fill="#84acce">Jun · this</text>
+        </g>
+      </svg>
+      <figcaption>Source: git history of my own repositories (first-appearance dates of each practice). Origin Feb 7; every-repo default from Mar 2.</figcaption>
+    </figure>
+  </div>
+
+  <!-- BEAT 2: drive by intent -->
+  <div class="beat">
+    <p class="point">2 · I spend my attention deciding — then let the agents run.</p>
+    <p class="body">The data reads like dictation, not back-and-forth. The gaps between my messages are long because the agents are working in them, and in a long session they take many steps of work for each thing I say.</p>
+    <div class="stats">
+      <div class="stat"><div class="big">≈ 4 min</div><div class="lbl">median time between my messages — the agents run in the gap</div></div>
+      <div class="stat"><div class="big">≈ 10×</div><div class="lbl">turns of agent work per message I send, in multi-hour sessions</div></div>
+    </div>
+    <figure class="chart" style="margin-top:24px;">
+      <svg viewBox="0 0 900 96" role="img" aria-label="One long session: 98 of my messages produced 887 agent turns">
+        <text x="0" y="22" font-family="IBM Plex Mono, monospace" font-size="12.5" fill="#9a958a">one 9.3-hour session</text>
+        <rect x="0" y="36" width="86" height="34" fill="#e8a33d" rx="3"/>
+        <rect x="86" y="36" width="774" height="34" fill="rgba(132,172,206,0.45)" rx="3"/>
+        <text x="8" y="58" font-family="IBM Plex Mono, monospace" font-size="12" fill="#0d0e12">98 me</text>
+        <text x="476" y="58" font-family="IBM Plex Mono, monospace" font-size="12" fill="#ece8df" text-anchor="middle">887 agent turns · 44 subagents dispatched</text>
+      </svg>
+      <figcaption>Source: my own Claude Code /insights (median response gap, two windows) and a measured session from my transcripts. Interactive and automated runs are not perfectly separable, so read the ratio as indicative.</figcaption>
+    </figure>
+  </div>
+
+  <!-- BEAT 3: long autonomous runs -->
+  <div class="beat">
+    <p class="point">3 · Some of the work runs for hours, on its own.</p>
+    <p class="body">Most sessions are short. But a real share of them run for hours of continuous build-and-verify while I'm doing something else — the longest I measured was around nine hours unbroken.</p>
+    <figure class="chart">
+      <svg viewBox="0 0 900 232" role="img" aria-label="Distribution of session length: most under an hour, about one in ten over three hours">
+        <g font-family="IBM Plex Mono, monospace" font-size="13" fill="#ece8df">
+          <text x="20" y="70">under 1 hour</text>
+          <text x="20" y="128">1 to 3 hours</text>
+          <text x="20" y="186">3 hours or more</text>
+        </g>
+        <rect x="180" y="48" width="541" height="34" fill="rgba(132,172,206,0.45)" rx="3"/>
+        <rect x="180" y="106" width="75"  height="34" fill="rgba(232,163,61,0.45)" rx="3"/>
+        <rect x="180" y="164" width="69"  height="34" fill="#e8a33d" rx="3"/>
+        <g font-family="IBM Plex Mono, monospace" font-size="13" fill="#ece8df">
+          <text x="731" y="70">~79%</text>
+          <text x="265" y="128">~11%</text>
+          <text x="259" y="186">~10%</text>
+        </g>
+        <text x="180" y="220" font-family="IBM Plex Mono, monospace" font-size="12" fill="#9a958a">longest single continuous run measured ≈ 9 hours</text>
+      </svg>
+      <figcaption>Source: measured from ~2,400 of my own session transcripts (active wall-clock, sampled). Proportions are indicative — long sessions are over-sampled by design; the durations are real.</figcaption>
+    </figure>
+  </div>
+
+  <!-- BEAT 4: parallel -->
+  <div class="beat">
+    <p class="point">4 · Often, more than one is running at once.</p>
+    <p class="body">A growing share of my messages go out while a second session is already working. Parallel, not serial.</p>
+    <div class="stats">
+      <div class="stat"><div class="big">1 in 4</div><div class="lbl">of my messages sent while another session is already running — up from 1 in 5 a window earlier</div></div>
+    </div>
+    <p class="src">Source: my own /insights (multi-clauding overlap), two windows, 29 May → 6 Jun 2026.</p>
+  </div>
+
+  <!-- BEAT 5: outcomes -->
+  <div class="beat">
+    <p class="point">5 · Directionally, more of it lands.</p>
+    <p class="body">Across two windows a week apart, the share of sessions that mostly or fully achieved what I set out to do moved up. One small movement — not a trend I'd stake anything on — but it points the right way.</p>
+    <figure class="chart">
+      <svg viewBox="0 0 900 172" role="img" aria-label="Mostly-or-fully-achieved share rose from about 64 percent to about 75 percent">
+        <g font-family="IBM Plex Mono, monospace" font-size="13" fill="#ece8df">
+          <text x="20" y="70">29 May</text>
+          <text x="20" y="128">6 Jun</text>
+        </g>
+        <rect x="180" y="48" width="438" height="34" fill="rgba(132,172,206,0.45)" rx="3"/>
+        <rect x="180" y="106" width="514" height="34" fill="#e8a33d" rx="3"/>
+        <g font-family="IBM Plex Mono, monospace" font-size="13" fill="#ece8df">
+          <text x="628" y="70">~64%</text>
+          <text x="704" y="128">~75%</text>
+        </g>
+      </svg>
+      <figcaption>Source: my own /insights, two windows. These outcome labels are model-inferred by Claude, not ground truth, and the windows differ in length — treat as directional, not measured.</figcaption>
+    </figure>
+  </div>
+
+  <!-- BEAT 6: friction -->
+  <div class="beat">
+    <p class="point">6 · My friction is choosing what to build — not fixing what got built.</p>
+    <p class="body">This is the one that changed how I work. When I read where my sessions actually go wrong, the top two causes weren't bugs. They were "wrong approach" and "misunderstood request" — scoping. The rigor layer (tests, review, the done-gate) takes correctness off my plate; what's left is deciding the right thing to build. That is why the loop front-loads research and review, and why the research phase exists at all.</p>
+    <figure class="chart">
+      <svg viewBox="0 0 900 200" role="img" aria-label="Top friction types are wrong approach and misunderstood request, both about scoping">
+        <g font-family="IBM Plex Mono, monospace" font-size="13" fill="#ece8df">
+          <text x="20" y="70">wrong approach</text>
+          <text x="20" y="128">misunderstood request</text>
+        </g>
+        <rect x="230" y="48" width="630" height="34" fill="#e8a33d" rx="3"/>
+        <rect x="230" y="106" width="472" height="34" fill="rgba(232,163,61,0.55)" rx="3"/>
+        <text x="230" y="178" font-family="IBM Plex Mono, monospace" font-size="12" fill="#9a958a">buggy code ranks below both — correctness is the part the loop already handles</text>
+      </svg>
+      <figcaption>Source: my own /insights friction taxonomy (model-inferred). Both leading friction types are about intent, not implementation.</figcaption>
+    </figure>
+  </div>
+
+  <!-- honesty -->
+  <section>
+    <div class="honest">
+      <h3>What this is — and isn't</h3>
+      <ul>
+        <li>It's a single person's data, over about four months. There's no control group and no baseline to compare against.</li>
+        <li>The satisfaction, outcome, and friction labels come from Claude reading my sessions — they're model-inferred, not measured ground truth.</li>
+        <li>I can't perfectly separate my interactive work from automated and evaluation runs, so I've kept the durations concrete and treated the ratios as indicative.</li>
+        <li>I've deliberately left out the bigger "multiplier" numbers I sometimes see in my own telemetry. They're my own rough estimates, and this page is for the things I can actually point to.</li>
+      </ul>
+    </div>
+    <p class="body" style="margin-top:26px;">None of this proves the loop is better than some other way of working. It's just what I found when I looked — long autonomous stretches, thin steering, and my own attention spent on what to build rather than on debugging. That's the shape that made me write the loop down, and share it.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    Most of this — the plugin, this site, the code behind it — wasn't written at a keyboard. It was dictated to a pair of smart glasses, hands-free, in between other things. The console was the exception, not the rule.
+    <br><br>
+    extended-superpowers · MIT © 2026 Carlos Manzanedo Rueda ·
+    <a href="https://github.com/cmanaha/extended-superpowers">github.com/cmanaha/extended-superpowers</a>
+  </div>
+</footer>
+</body>
+</html>
