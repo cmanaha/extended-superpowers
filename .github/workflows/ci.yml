@@ -20,8 +20,14 @@ jobs:
       - name: Install shellcheck
         run: sudo apt-get update && sudo apt-get install -y shellcheck
 
-      # claude CLI is intentionally optional in ci.sh; manifest JSON is always
-      # validated. When a CI-friendly `claude plugin validate` path is wired,
-      # add it here (see ADR/plan).
+      # Native installer per https://code.claude.com/docs/en/setup — installs
+      # to ~/.local/bin. Enables `claude plugin validate` (ci.sh step 1) and
+      # the sandboxed install smoke test (ci.sh step 6, regression guard for
+      # issue #1). ci.sh still degrades gracefully if this step is removed.
+      - name: Install Claude Code CLI
+        run: |
+          curl -fsSL https://claude.ai/install.sh | bash
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
       - name: Run ci.sh
         run: bash scripts/ci.sh
