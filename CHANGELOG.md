@@ -5,7 +5,21 @@ All notable changes to this project are documented here. This project adheres to
 
 ## [Unreleased]
 
+### Fixed
+- Plugin install failed on Claude Code >= 2.1.206 with "unsupported source
+  type": `marketplace.json` used a bare-string source resolved via
+  `metadata.pluginRoot`, a form the docs describe but the installer rejects.
+  The source is now the explicit `./plugins/extended-superpowers` path and
+  `pluginRoot` is gone (an explicit path plus `pluginRoot` risks
+  double-prefixing if a future resolver implements the spec). Reported by
+  @pedro-angel (#1).
+
 ### Added
+- Install smoke test (`tests/install/marketplace-install.test.sh`), wired into
+  `ci.sh`: adds this repo as a marketplace and installs the plugin inside a
+  throwaway `CLAUDE_CONFIG_DIR`. Regression guard for #1 and the standing
+  cross-machine install release gate. Verified red on the pre-fix
+  `marketplace.json`, green on the fixed one.
 - Environment-agnostic clean copy (ADR-0005): generic `memory` (no personal MCP),
   bundled `spec-compliance-reviewer` + `code-quality-reviewer` agents so the loop
   is self-contained, external tools referenced only as optional "if installed",

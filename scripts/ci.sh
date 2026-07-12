@@ -23,7 +23,7 @@ done
 
 step "3. Shell lint (shellcheck)"
 if command -v shellcheck >/dev/null 2>&1; then
-  shellcheck scripts/*.sh .githooks/commit-msg plugins/extended-superpowers/hooks/*.sh tests/trigger/*.sh || fail=1
+  shellcheck scripts/*.sh .githooks/commit-msg plugins/extended-superpowers/hooks/*.sh tests/trigger/*.sh tests/install/*.sh || fail=1
 else
   echo "shellcheck not found — skipping (CI installs it)."
 fi
@@ -43,7 +43,10 @@ else
   for t in "${trigger_tests[@]}"; do echo "run: $t"; bash "$t" || fail=1; done
 fi
 
-step "6. No-AI-attribution guard (git history)"
+step "6. Install smoke test (sandboxed marketplace add + plugin install)"
+bash tests/install/marketplace-install.test.sh || fail=1
+
+step "7. No-AI-attribution guard (git history)"
 if git rev-parse HEAD >/dev/null 2>&1; then
   if git log --format='%B' | grep -qiE \
     'co-authored-by:.*(claude|anthropic|openai|gpt|copilot|gemini|cursor|\bai\b)|generated with \[?(claude|ai)|🤖|noreply@anthropic\.com|assisted by (claude|gpt|copilot|an ai)'; then
