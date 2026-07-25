@@ -33,6 +33,26 @@ problems**. Loop until BLOCKER/MAJOR findings are resolved.
   — every bare constant must carry its selection logic (a `threshold-reasoning`
   skill, if installed, helps).
 
+## Run it as a workflow when you can
+
+The lens table above is binding, but as prose it is a loop enforced by an honour
+system — the failure mode is a reviewer set that quietly shrinks to one. This
+plugin ships the same contract as a workflow script, where the lens set is the
+loop bound and cannot be silently narrowed:
+
+```
+/extended-superpowers:adversarial-review-gate
+```
+
+Pass `{artifact, kind, principle}` — `kind` is `spec`, `plan`, or
+`implementation`. It fans the spec/plan lenses out in parallel, forces every
+reviewer to return severity-graded structured findings, refuses to run
+code-quality while spec-compliance is dirty, and returns GO / NO-GO.
+
+Requires Claude Code 2.1.154+ (dynamic workflows). On older versions, or when
+the artifact needs a lens set this table does not cover, run the protocol below
+by hand — same contract, manual dispatch.
+
 ## Protocol
 
 1. **Look up the governing principle.** If a memory store is available (e.g. a

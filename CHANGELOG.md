@@ -5,6 +5,31 @@ All notable changes to this project are documented here. This project adheres to
 
 ## [Unreleased]
 
+### Added
+- **The adversarial lens contract now ships as a workflow** —
+  `/extended-superpowers:adversarial-review-gate` (ADR-0006). The lens table was
+  prose the model was trusted to honour; in the workflow it is the loop bound.
+  Spec and plan lenses fan out in parallel, every reviewer returns
+  schema-validated severity-graded findings, `code-quality` is not dispatched at
+  all while `spec-compliance` is dirty, and the gate returns GO / NO-GO. The
+  skill keeps its manual protocol as the fallback for Claude Code < 2.1.154 and
+  for artifacts needing a lens set the table does not cover.
+- Experiment **E02 (plugin workflows): GO** — a plugin can ship a workflow.
+  `workflows` is a recognised manifest field (proven against a planted
+  unknown-key control), the component loader treats workflows as first-class,
+  and `workflows/` survives marketplace install into the plugin cache.
+- CI step 5 syntax-checks every shipped workflow script and asserts each declares
+  a `meta.name`. This exists because of E02's first surprise: **the platform
+  checks nothing** — a workflow containing invalid JavaScript passed
+  `claude plugin validate` with zero warnings, installed cleanly, and left the
+  plugin enabled. A plain `node --check` gives a false pass on these scripts
+  (`export const meta` plus top-level `await` and `return` fit no single node
+  parse mode), so the check de-exports and wraps the body first. Verified RED on
+  a planted syntax error, GREEN on the real script.
+- The definition-of-done gate's `acceptance_green` criterion now fails on a
+  shipped workflow with no contract test, as it already did for skills. Verified
+  NO-GO with the test removed, GO with it restored.
+
 ### Fixed
 - Plugin install failed on Claude Code >= 2.1.206 with "unsupported source
   type": `marketplace.json` used a bare-string source resolved via

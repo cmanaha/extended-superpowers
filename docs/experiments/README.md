@@ -19,3 +19,5 @@ See the `environment-research` skill and its `reference.md` for the formats.
 
 - `E01-plugin-sequencing/` — does superpowers' brainstorming preempt a phase that
   is meant to run before it? The architecture gate for this plugin.
+- `E02-plugin-workflows/` — can this plugin *ship* a workflow? The distribution
+  gate for converting any prose-enforced phase into a script (ADR-0006).
