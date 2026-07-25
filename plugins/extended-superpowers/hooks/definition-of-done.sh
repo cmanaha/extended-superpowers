@@ -36,7 +36,15 @@ if req acceptance_green; then
     s=$(basename "$d")
     [ -f "tests/trigger/$s.trigger.sh" ] || { echo "      (no trigger test for shipped skill: $s)"; miss=1; }
   done
-  result "acceptance_green (every shipped skill has a trigger test)" "$miss"
+  # Workflows are a shipped artifact too, and the platform validates none of
+  # them (experiment E02) — so an untested workflow must fail the gate exactly
+  # like an untested skill would.
+  for w in plugins/*/workflows/*.js; do
+    [ -e "$w" ] || continue
+    n=$(basename "$w" .js)
+    [ -f "tests/trigger/$n.workflow.sh" ] || { echo "      (no contract test for shipped workflow: $n)"; miss=1; }
+  done
+  result "acceptance_green (every shipped skill and workflow has a test)" "$miss"
 fi
 
 for c in lint coverage telemetry; do
